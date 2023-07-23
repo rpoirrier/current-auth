@@ -21,11 +21,6 @@ const init = async () => {
 
   console.log(isLoggedIn);
 
-  if (isLoggedIn) {
-    const access_token = await client.getTokenSilently();
-    const user = await client.getUser();
-  }
-
   window.Webflow ||= [];
   window.Webflow.push(() => {
     const loginElement = document.querySelector('[data-element="login"]');
