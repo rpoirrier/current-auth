@@ -6,6 +6,7 @@ const init = async () => {
     domain: 'currentdigital.us.auth0.com',
     authorizationParams: {
       redirect_uri: 'https://lfca.webflow.io/',
+      audience: 'https://auth.currentdigital.io',
     },
   });
 
@@ -22,7 +23,7 @@ const init = async () => {
 
   if (isLoggedIn) {
     const access_token = await client.getTokenSilently();
-    console.log(access_token);
+    const user = await client.getUser();
   }
 
   window.Webflow ||= [];
